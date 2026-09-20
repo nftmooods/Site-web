@@ -13,7 +13,8 @@ robots.txt, sitemap.xml     Référencement
 assets/css/site.css         Toute la mise en forme. Les couleurs et typographies sont celles de la charte.
 assets/js/site.js           Menu mobile, apparition au défilement, année du pied de page. Le site fonctionne sans.
 assets/logos/               Symbole Strates Digitales (SVG) et favicon
-assets/img/                 Les cinq illustrations « dossier » de la charte, en WebP (35 à 60 Ko chacune)
+assets/img/                 Les cinq illustrations « dossier » de la charte, en WebP (35 à 60 Ko chacune),
+                            et og-strates-digitales.png (image de partage 1200 × 630 pour LinkedIn, X, etc.)
 Sources/                    Voir « Modifier le site » plus bas
 
 Les cinq familles Google Fonts (Barlow, Barlow Condensed, Fragment Mono, Caveat,
@@ -65,6 +66,11 @@ Les couleurs, typographies et rayons sont en tête de assets/css/site.css (:root
 
 Règles éditoriales tenues sur ce site
 -------------------------------------
+- Le texte est tourné vers le lecteur (tutoiement, « tu », sa situation, son problème),
+  pas vers Martin. Accroches et pitchs parlent de ce que le lecteur vit et récupère ;
+  le « je » reste réservé aux preuves vécues et à la bio (section « Qui est derrière »).
+  Modèle d'accroche : un constat sur ce que tu fais, puis la contradiction en question
+  (« Tu utilises l'IA pour gagner du temps. Alors pourquoi tu repars de zéro à chaque fois ? »).
 - En façade : « Strates Digitales » + libellés plats (le média, les Labs, les ateliers,
   les formations, le podcast, l'accompagnement). Pas de Strate 0, de codes 0x01, de
   Stratagème ni de Stratège : c'est la taxonomie interne Notion.

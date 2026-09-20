@@ -112,6 +112,7 @@ button{font:inherit;cursor:pointer;color:inherit}
 .hero h1{font-size:clamp(52px,7.2vw,96px);letter-spacing:-.035em;line-height:.94;margin-top:26px;max-width:12ch}
 .hero h1 .light{font-weight:400;color:var(--turq-deep)}
 .hero.compact h1{font-size:clamp(46px,6vw,80px);max-width:14ch}
+.hero.long h1{font-size:clamp(44px,5.8vw,78px);max-width:15ch}
 .hero .lede{font-size:19px;margin-top:28px;max-width:44ch;color:var(--ink)}
 .hero .btn-row{margin-top:34px}
 .hero .pills{display:flex;flex-wrap:wrap;gap:0 14px;margin-top:40px;padding-top:22px;border-top:1px solid var(--ink-10)}
@@ -263,6 +264,7 @@ a.card:hover h3{color:var(--turq-deep)}
 .project .act{margin-top:auto;padding-top:22px;display:flex;flex-wrap:wrap;gap:12px 18px;align-items:center}
 .project.live{border-color:var(--orange);box-shadow:0 1px 0 var(--orange)}
 .project.live .ph{background:var(--orange);color:var(--charbon);border-color:var(--orange)}
+.project.live .ph .chip{background:var(--charbon);color:var(--off)}
 
 /* Média */
 .pod{display:grid;grid-template-columns:1fr 1fr;gap:40px 72px;align-items:start}
@@ -322,7 +324,7 @@ body.motion-off .js-reveal [data-reveal],body.motion-off [data-reveal]{opacity:1
   .offer{gap:28px 40px}
 }
 @media(max-width:900px){
-  .top nav{display:none;position:fixed;inset:var(--top-h) 0 0 0;background:var(--off);flex-direction:column;align-items:flex-start;gap:0;padding:24px var(--gutter);overflow:auto}
+  .top nav{display:none;position:absolute;top:100%;left:0;right:0;height:calc(100vh - var(--top-h));height:calc(100dvh - var(--top-h));background:var(--off);flex-direction:column;align-items:flex-start;gap:0;padding:24px var(--gutter);overflow:auto;border-top:1px solid var(--ink-10)}
   .top nav.open{display:flex}
   .top nav a{font-size:14px;min-height:56px;border-bottom:1px solid var(--ink-10);width:100%}
   .top nav a[aria-current="page"]{border-bottom-color:var(--orange)}
