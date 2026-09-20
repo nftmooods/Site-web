@@ -70,6 +70,19 @@ regénération écrasera ta modification.
 
 Les couleurs, typographies et rayons sont en tête de assets/css/site.css (:root).
 
+Statistiques de visite (Umami)
+------------------------------
+Umami tourne sur le VPS (Coolify). Pour l'activer sur ce site :
+1. Dans Umami : Settings → Websites → Add website → Name « martinlisen.com »,
+   Domain « martinlisen.com » → Save. Puis Edit → Tracking code : noter l'adresse du
+   script (https://…/script.js) et le Website ID.
+2. Coller ces deux valeurs en tête de Sources/build-site.py (UMAMI_SCRIPT, UMAMI_WEBSITE_ID).
+3. Relancer python3 Sources/build-site.py, commiter, pousser sur main.
+Le script est chargé en « defer » et limité au domaine martinlisen.com (les aperçus locaux
+ne comptent pas). Umami ne pose aucun cookie : la mention du pied de page passe alors à
+« statistiques anonymes, auto-hébergées ». Tant que les deux valeurs sont vides, rien
+n'est ajouté aux pages.
+
 Règles éditoriales tenues sur ce site
 -------------------------------------
 - Le texte est tourné vers le lecteur (tutoiement, « tu », sa situation, son problème),

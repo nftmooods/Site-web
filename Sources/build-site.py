@@ -2,6 +2,12 @@
 # Usage : python3 Sources/build-site.py   (à lancer depuis le dossier Site_martinlisen ou n importe où)
 
 import re, pathlib, sys, hashlib
+
+# ---- Statistiques de visite (Umami, auto-hébergé sur le VPS) --------------------------------
+# Renseigner les deux valeurs ci-dessous (Umami → Settings → Websites → martinlisen.com → Edit),
+# puis relancer ce script. Tant qu'elles sont vides, aucun script n'est ajouté aux pages.
+UMAMI_SCRIPT = ''       # ex. 'https://umami.m3ods.cloud/script.js'
+UMAMI_WEBSITE_ID = ''   # ex. 'a1b2c3d4-....' (Website ID)
 root = pathlib.Path(__file__).resolve().parent
 out = root.parent
 head = (root/'parts/head.html').read_text()
@@ -10,6 +16,14 @@ foot = (root/'parts/footer.html').read_text()
 # recharge le fichier après chaque modification au lieu de garder l'ancien en cache.
 def stamp(p): return hashlib.sha1((out/p).read_bytes()).hexdigest()[:10]
 head = head.replace('{{V:css}}', stamp('assets/css/site.css'))
+if UMAMI_SCRIPT and UMAMI_WEBSITE_ID:
+    analytics = ('\n<script defer src="%s" data-website-id="%s" data-domains="martinlisen.com"></script>'
+                 % (UMAMI_SCRIPT, UMAMI_WEBSITE_ID))
+    privacy = 'Site sans cookie · statistiques anonymes, auto-hébergées'
+else:
+    analytics, privacy = '', 'Site sans cookie ni traceur'
+head = head.replace('{{ANALYTICS}}', analytics)
+foot = foot.replace('{{PRIVACY}}', privacy)
 foot = foot.replace('{{V:js}}', stamp('assets/js/site.js'))
 pages = {
  'index.html': ('Strates Digitales · Martin Lisen — transforme ton usage de l\'IA en outils qui te rendent du temps',
