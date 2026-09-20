@@ -206,9 +206,28 @@ a.card:hover h3{color:var(--turq-deep)}
 .recon ol{counter-reset:r;display:grid;gap:0;border-top:1px solid var(--ink-15)}
 .recon ol li{counter-increment:r;display:grid;grid-template-columns:44px 1fr;gap:16px;padding:22px 0;border-bottom:1px solid var(--ink-15);font-size:17px;line-height:1.55}
 .recon ol li::before{content:"0" counter(r);font-family:var(--mono);font-size:11px;letter-spacing:.12em;color:var(--turq-deep);padding-top:6px}
-.calc{margin-top:28px;padding:20px 22px;border:1px solid var(--ink);border-radius:var(--radius-card);background:#fff;box-shadow:0 1px 0 var(--ink)}
-.calc .mono{color:var(--ink-55);display:block}
-.calc p{margin-top:8px;font-size:16px;line-height:1.5}
+.calc-gallery{margin-top:28px}
+.calc-gallery>.mono{color:var(--ink-55);display:block;margin-bottom:12px}
+.calc-viewport{position:relative}
+.calc-slide{padding:20px 22px;border:1px solid var(--ink);border-radius:var(--radius-card);background:#fff;box-shadow:0 1px 0 var(--ink)}
+.calc-slide+.calc-slide{margin-top:14px}
+.calc-slide .calc-title{font-family:var(--cond);font-weight:800;font-size:19px;letter-spacing:-.01em;margin-top:0}
+.calc-slide p{margin-top:10px;font-size:15.5px;line-height:1.5}
+.calc-slide p:first-child{margin-top:0}
+.calc-slide .calc-math .mono{color:var(--turq-deep);display:inline;font-size:10px;margin-right:8px;vertical-align:1px}
+.calc-slide .calc-result{margin-top:12px;padding-top:12px;border-top:1px dashed var(--ink-15)}
+.calc-slide .calc-result b{font-weight:600}
+.calc-gallery.js-gallery .calc-slide{display:none}
+.calc-gallery.js-gallery .calc-slide.is-active{display:block;animation:calc-in .35s var(--ease)}
+@keyframes calc-in{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.calc-nav{display:flex;align-items:center;gap:14px;margin-top:16px}
+.calc-nav[hidden]{display:none}
+.calc-prev,.calc-next{width:34px;height:34px;flex:none;border-radius:50%;border:1px solid var(--ink-15);background:#fff;display:grid;place-items:center;font-size:14px;transition:background .2s,color .2s,border-color .2s}
+.calc-prev:hover,.calc-next:hover{background:var(--charbon);color:var(--off);border-color:var(--charbon)}
+.calc-dots{display:flex;gap:8px}
+.calc-dot{width:8px;height:8px;padding:0;border:0;border-radius:50%;background:var(--ink-15)}
+.calc-dot.is-active{background:var(--orange);width:22px;border-radius:5px;transition:width .25s var(--ease),background .25s}
+@media(prefers-reduced-motion:reduce){.calc-gallery.js-gallery .calc-slide.is-active{animation:none}}
 
 /* Ticket sombre (preuves, CTA) */
 .ticket{border-radius:var(--radius-card);overflow:hidden;border:1px solid var(--ink);box-shadow:0 1px 0 var(--ink);margin-top:44px}

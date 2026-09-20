@@ -98,9 +98,33 @@
       <div data-reveal>
         <h2 id="h-reconnais" class="sr-only">Si tu te reconnais</h2>
         <p class="quote"><span class="light">Chaque fois, c'est la première fois.</span> Si tu te reconnais, on parle du même problème.</p>
-        <div class="calc">
+        <div class="calc-gallery" data-calc-gallery>
           <span class="mono">Le calcul que personne ne fait</span>
-          <p>Tu ne perds pas une journée, tu perds vingt minutes. Sauf que tu le refais chaque semaine, et que rien ne s'accumule. <span class="todo">[À FOURNIR : un exemple chiffré validé, du type « tu refais ça X fois par an, ça fait N heures »]</span></p>
+          <div class="calc-viewport">
+            <div class="calc-slide" data-calc-slide>
+              <p class="calc-title">Trier tes newsletters.</p>
+              <p>Tu reçois 7, 8, 10 newsletters par semaine. Tu les lis en diagonale de peur de rater un truc utile, ou tu arrêtes de les ouvrir&nbsp;: tu culpabilises, jusqu'au jour où tu te désabonnes sans savoir pourquoi tu t'étais abonné.</p>
+              <p class="calc-math"><span class="mono">Le calcul</span> 5 min de tri par newsletter × 8 par semaine, une moyenne basse&nbsp;: 40 min chaque semaine.</p>
+              <p class="calc-result"><b>35 heures par an.</b> Plus de 4 jours de travail, pour un contenu qui la plupart du temps ne sert jamais à rien.</p>
+            </div>
+            <div class="calc-slide" data-calc-slide>
+              <p class="calc-title">Replanifier une tâche dans ton agenda.</p>
+              <p>Un rendez-vous bouge, une tâche est reportée. Tu rouvres l'agenda, tu ressaisis la date, l'heure, le rappel.</p>
+              <p class="calc-math"><span class="mono">Le calcul</span> 5 min à chaque fois × 2 à 3 fois par semaine, une fréquence courante en solo&nbsp;: 10 à 15 min chaque semaine.</p>
+              <p class="calc-result"><b>Jusqu'à 2 jours de travail par an.</b> Repris de zéro à chaque fois&nbsp;: rien n'apprend de la fois précédente.</p>
+            </div>
+            <div class="calc-slide" data-calc-slide>
+              <p class="calc-title">Trouver une idée, l'écrire, la publier.</p>
+              <p>Pas d'idée cette semaine pour tes réseaux. Tu cherches, tu écris, tu publies, sans méthode ni gabarit.</p>
+              <p class="calc-math"><span class="mono">Le calcul</span> sans méthode&nbsp;: 8 à 10h par semaine, un ordre de grandeur courant chez les indépendants qui gèrent seuls leurs réseaux. Avec une méthode (banque d'idées, gabarits, planification)&nbsp;: 2 à 4h suffisent.</p>
+              <p class="calc-result"><b>L'écart&nbsp;: jusqu'à une journée de travail entière, chaque semaine.</b></p>
+            </div>
+          </div>
+          <div class="calc-nav" data-calc-nav hidden>
+            <button type="button" class="calc-prev" data-calc-prev aria-label="Exemple précédent">←</button>
+            <div class="calc-dots" data-calc-dots role="tablist" aria-label="Choisir un exemple"></div>
+            <button type="button" class="calc-next" data-calc-next aria-label="Exemple suivant">→</button>
+          </div>
         </div>
       </div>
       <ol data-reveal>
