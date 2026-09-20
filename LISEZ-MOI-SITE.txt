@@ -112,10 +112,6 @@ Travailler avec moi (travailler-avec-moi.html)
 - Liens des deux formations LinkedIn Learning (Blender, Midjourney).
 - Fait : photo réelle de Martin en formation (assets/img/martin-formateur.webp).
 
-Pied de page (toutes les pages, dans Sources/parts/footer.html)
-- Mention légale : numéro d'entreprise, ou formulation à retenir pour la facturation
-  via Smart.
-
 À faire aussi après la mise en ligne
 ------------------------------------
 - Mettre le lien du site partout (LinkedIn, bios, signature mail).
