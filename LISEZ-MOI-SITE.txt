@@ -5,7 +5,7 @@ Ce que contient le dossier
 --------------------------
 index.html                  Accueil
 media.html                  Le média (podcast, newsletter)
-labs.html                   Les Labs (builds, produits, expérimentations)
+labs.html                   Le Lab (builds, produits, expérimentations)
 travailler-avec-moi.html    Page de conversion (ateliers, formations, accompagnement)
 404.html                    Page introuvable
 .htaccess                   Renvoie les URL inconnues vers 404.html (Apache, hébergement Hostinger)
@@ -71,12 +71,12 @@ Règles éditoriales tenues sur ce site
   le « je » reste réservé aux preuves vécues et à la bio (section « Qui est derrière »).
   Modèle d'accroche : un constat sur ce que tu fais, puis la contradiction en question
   (« Tu utilises l'IA pour gagner du temps. Alors pourquoi tu repars de zéro à chaque fois ? »).
-- En façade : « Strates Digitales » + libellés plats (le média, les Labs, les ateliers,
+- En façade : « Strates Digitales » + libellés plats (le média, le Lab, les ateliers,
   les formations, le podcast, l'accompagnement). Pas de Strate 0, de codes 0x01, de
   Stratagème ni de Stratège : c'est la taxonomie interne Notion.
 - Un seul appel à l'action principal par page : « Réserver un échange » (Calendly).
-  Le média et les Labs renvoient vers « Travailler avec moi ».
-- Labs : un produit en vente porte son lien d'achat. Un produit en construction porte
+  Le média et le Lab renvoient vers « Travailler avec moi ».
+- Le Lab : un produit en vente porte son lien d'achat. Un produit en construction porte
   un « suis la suite ». Un produit abandonné renvoie vers « Travailler avec moi ».
 - Aucun chiffre inventé. Le seul chiffre affiché est « 2 jours de gain » (Message de
   référence, preuve 1). Tout le reste est marqué [À FOURNIR].
@@ -101,7 +101,7 @@ Le média (media.html)
 - Titres, durées et liens des trois derniers épisodes.
 - Lien de la newsletter LinkedIn « L'Art de la Technologie ».
 
-Les Labs (labs.html)
+Le Lab (labs.html)
 - Noms, description en une phrase, enseignement et liens Superhive des deux autres
   addons en vente (en plus de Crumble Toolkit).
 - Lien direct de la vidéo de démonstration de Crumble Toolkit (pointe pour l'instant
