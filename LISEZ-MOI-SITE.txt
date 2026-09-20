@@ -107,9 +107,11 @@ Le Lab (labs.html)
   vers la chaîne YouTube).
 
 Travailler avec moi (travailler-avec-moi.html)
-- Durée et prix publiables de l'atelier court (et si les versions solo et groupe
-  sont toutes deux proposées).
-- Liens des deux formations LinkedIn Learning (Blender, Midjourney).
+- Fait : atelier court en 1:1, 179 € HTVA (le prix affiché est celui d'une méthode
+  rejouable, pas d'une durée : le chrono n'apparaît qu'en petite précision).
+  Un besoin d'équipe renvoie vers les formations, pas vers une version groupe de
+  l'atelier — décision du 20/09.
+- Fait : liens vers le profil formateur LinkedIn Learning.
 - Fait : photo réelle de Martin en formation (assets/img/martin-formateur.webp).
 
 À faire aussi après la mise en ligne
