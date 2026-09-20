@@ -96,10 +96,9 @@ Accueil (index.html)
   (temps de cadrage avant / après) et la preuve 3 (préparation de scènes).
 
 Le média (media.html)
-- Lien Spotify du podcast (bouton « Écouter sur Spotify » et lecteur intégré : le code
-  de l'iframe est prêt en commentaire, il suffit de coller l'identifiant du podcast).
-- Titres, durées et liens des trois derniers épisodes.
-- Lien de la newsletter LinkedIn « L'Art de la Technologie ».
+- Fait : lien Spotify du podcast et lecteur intégré (le widget Spotify affiche
+  automatiquement les derniers épisodes, rien à tenir à jour à la main).
+- Fait : lien de la newsletter LinkedIn « L'Art de la Technologie ».
 
 Le Lab (labs.html)
 - Noms, description en une phrase, enseignement et liens Superhive des deux autres
@@ -111,8 +110,7 @@ Travailler avec moi (travailler-avec-moi.html)
 - Durée et prix publiables de l'atelier court (et si les versions solo et groupe
   sont toutes deux proposées).
 - Liens des deux formations LinkedIn Learning (Blender, Midjourney).
-- Une photo réelle de Martin au travail (lumière naturelle, couleurs conservées),
-  format 4:5, environ 800 × 1000 px.
+- Fait : photo réelle de Martin en formation (assets/img/martin-formateur.webp).
 
 Pied de page (toutes les pages, dans Sources/parts/footer.html)
 - Mention légale : numéro d'entreprise, ou formulation à retenir pour la facturation

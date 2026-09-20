@@ -299,6 +299,7 @@ a.card:hover h3{color:var(--turq-deep)}
 .todo{display:inline-block;padding:2px 8px;border:1px dashed var(--orange);border-radius:var(--radius-tag);background:rgba(247,131,18,.08);font-family:var(--mono);font-size:11px;letter-spacing:.02em;text-transform:none;color:var(--ink)}
 .dark .todo,.foot .todo,.tbody .todo{color:var(--off)}
 .photo-ph{aspect-ratio:4/5;border:1px dashed var(--ink-15);border-radius:var(--radius-card);background:var(--gris);display:grid;place-items:center;text-align:center;padding:24px;color:var(--ink-55);font-family:var(--mono);font-size:11px;letter-spacing:.04em}
+.photo-real{aspect-ratio:4/5;border-radius:var(--radius-card);object-fit:cover;border:1px solid var(--ink)}
 
 /* ---------- Pied de page ---------- */
 .foot{background:var(--charbon);color:var(--off);padding-block:72px 40px;border-top:1px solid var(--paper-10)}
