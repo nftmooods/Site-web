@@ -7,8 +7,8 @@ out = root.parent
 head = (root/'parts/head.html').read_text()
 foot = (root/'parts/footer.html').read_text()
 pages = {
- 'index.html': ('Strates Digitales · Martin Lisen — transforme tes tests IA en outils du quotidien',
-   "Tu utilises l'IA, tu te formes, tu y passes du temps : qu'est-ce qu'il t'en reste ? Martin Lisen, consultant et formateur IA, t'aide à transformer tes tests en outils du quotidien qui font vraiment gagner du temps ou de l'argent.", '', ''),
+ 'index.html': ('Strates Digitales · Martin Lisen — transforme ton usage de l\'IA en outils qui te rendent du temps',
+   "Tu as intégré l'IA parce qu'elle change ta façon de travailler. Martin Lisen, consultant et formateur IA, forme les indépendants et les entreprises à en faire des outils du quotidien qui rendent vraiment du temps.", '', ''),
  'media.html': ('Le média — Strates Digitales',
    "Strates Digitales, le podcast et la newsletter de Martin Lisen : les nouvelles technologies sans la hype, usages qui marchent, limites et risques.", 'media.html', 'media'),
  'labs.html': ('Les Labs — Strates Digitales',
