@@ -112,7 +112,8 @@ button{font:inherit;cursor:pointer;color:inherit}
 .hero h1{font-size:clamp(52px,7.2vw,96px);letter-spacing:-.035em;line-height:.94;margin-top:26px;max-width:12ch}
 .hero h1 .light{font-weight:400;color:var(--turq-deep)}
 .hero.compact h1{font-size:clamp(46px,6vw,80px);max-width:14ch}
-.hero.long h1{font-size:clamp(44px,5.8vw,78px);max-width:15ch}
+.hero.long h1{font-size:clamp(42px,5.4vw,74px);max-width:15ch}
+.nowrap{white-space:nowrap}
 .hero .lede{font-size:19px;margin-top:28px;max-width:44ch;color:var(--ink)}
 .hero .btn-row{margin-top:34px}
 .hero .pills{display:flex;flex-wrap:wrap;gap:0 14px;margin-top:40px;padding-top:22px;border-top:1px solid var(--ink-10)}
