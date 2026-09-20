@@ -52,13 +52,14 @@ button{font:inherit;cursor:pointer;color:inherit}
 .top nav a{display:flex;align-items:center;min-height:44px;font-family:var(--mono);font-size:11px;letter-spacing:.11em;text-transform:uppercase;color:var(--ink-70);text-decoration:none;white-space:nowrap;border-bottom:1px solid transparent;transition:color .2s,border-color .2s}
 .top nav a:hover{color:var(--turq)}
 .top nav a[aria-current="page"]{color:var(--ink);border-bottom-color:var(--orange)}
-.top nav .cta{height:44px;padding-inline:18px;gap:14px;font-size:14px}
+.top nav .cta{height:40px;padding-inline:16px;gap:10px;font-size:12.5px}
+.top nav .cta span{font-size:12px}
 .menu-btn{display:none;margin-left:auto;min-height:44px;padding:0 14px;border:1px solid var(--ink-15);border-radius:var(--radius-control);background:transparent;font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;gap:10px;align-items:center}
 .menu-btn[aria-expanded="true"]{background:var(--charbon);color:var(--off);border-color:var(--charbon)}
 
 /* ---------- Boutons ---------- */
-.cta{display:inline-flex;align-items:center;justify-content:space-between;gap:24px;min-height:54px;padding-inline:22px;border-radius:var(--radius-control);background:var(--orange);color:var(--charbon);font-weight:600;font-size:15px;text-decoration:none;border:1px solid var(--orange);transition:background .2s,color .2s,border-color .2s,transform .2s}
-.cta span{font-size:14px}
+.cta{display:inline-flex;align-items:center;justify-content:space-between;gap:16px;min-height:46px;padding-inline:20px;border-radius:var(--radius-control);background:var(--orange);color:var(--charbon);font-weight:600;font-size:14px;text-decoration:none;border:1px solid var(--orange);transition:background .2s,color .2s,border-color .2s,transform .2s}
+.cta span{font-size:13px}
 .cta:hover{background:var(--charbon);color:var(--off);border-color:var(--charbon);transform:translateY(-2px)}
 .cta.ghost{background:transparent;color:var(--ink);border-color:var(--ink-15)}
 .cta.ghost:hover{background:var(--charbon);color:var(--off);border-color:var(--charbon)}
