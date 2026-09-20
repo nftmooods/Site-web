@@ -1,0 +1,119 @@
+MARTINLISEN.COM — SITE STRATES DIGITALES
+Site statique (HTML, CSS, JS), sans base de données ni build obligatoire.
+
+Ce que contient le dossier
+--------------------------
+index.html                  Accueil
+media.html                  Le média (podcast, newsletter)
+labs.html                   Les Labs (builds, produits, expérimentations)
+travailler-avec-moi.html    Page de conversion (ateliers, formations, accompagnement)
+404.html                    Page introuvable
+.htaccess                   Renvoie les URL inconnues vers 404.html (Apache, hébergement Hostinger)
+robots.txt, sitemap.xml     Référencement
+assets/css/site.css         Toute la mise en forme. Les couleurs et typographies sont celles de la charte.
+assets/js/site.js           Menu mobile, apparition au défilement, année du pied de page. Le site fonctionne sans.
+assets/logos/               Symbole Strates Digitales (SVG) et favicon
+assets/img/                 Les cinq illustrations « dossier » de la charte, en WebP (35 à 60 Ko chacune)
+Sources/                    Voir « Modifier le site » plus bas
+
+Les cinq familles Google Fonts (Barlow, Barlow Condensed, Fragment Mono, Caveat,
+Unbounded) se chargent depuis Google. Sans connexion, les polices de remplacement
+s'affichent.
+
+Mettre en ligne sur Hostinger
+-----------------------------
+Le site actuel est un Hostinger Website Builder. Il faut le remplacer par ces fichiers.
+
+1. hPanel → Sites web → martinlisen.com → dans le menu du site, supprimer (ou
+   « détacher ») le Website Builder du domaine. Hostinger propose alors de gérer
+   le domaine avec un hébergement web classique.
+2. hPanel → Hébergement → martinlisen.com → Gestionnaire de fichiers → public_html.
+   Vider ce dossier (garder une copie si tu veux), puis déposer TOUT le contenu de
+   Site_martinlisen/ (les fichiers .html, .htaccess, robots.txt, sitemap.xml et le
+   dossier assets/). Le dossier Sources/ n'est pas nécessaire en ligne, mais ne gêne pas.
+   Le dépôt se fait par glisser-déposer dans le Gestionnaire de fichiers, ou par FTP
+   (identifiants dans hPanel → Fichiers → Comptes FTP).
+3. Vérifier que l'index est bien index.html (hPanel → Avancé → Index du site, si proposé)
+   et que le certificat SSL est actif (hPanel → Sécurité → SSL). Forcer le HTTPS.
+4. Ouvrir https://martinlisen.com, https://martinlisen.com/labs.html et une URL
+   inexistante (doit afficher la page 404 du site).
+
+Variante recommandée : déploiement par Git (le site vit sur GitHub, Hostinger le clone)
+1. Supprimer ou détacher le Website Builder, comme ci-dessus, pour que public_html soit vide.
+2. hPanel → Sites web → martinlisen.com → Avancé → Git → dépôt
+   https://github.com/nftmooods/Site-web, branche main, répertoire vide (= public_html) → Créer → Déployer.
+3. Activer le déploiement automatique si proposé : chaque push sur main met le site à jour.
+
+Variante : si tu préfères garder le Website Builder actif le temps de vérifier,
+dépose le site dans un sous-domaine (ex. nouveau.martinlisen.com) puis bascule.
+
+Modifier le site
+----------------
+Chaque page est un fichier .html complet : on peut corriger un texte directement dedans.
+
+Pour éviter que l'en-tête et le pied de page divergent entre les pages, ils sont aussi
+dans Sources/parts/ et le contenu de chaque page dans Sources/pages/. Après une
+modification dans Sources/, regénérer les pages :
+
+    python3 Sources/build-site.py
+
+Règle : corriger à la source (Sources/), jamais seulement dans le fichier généré.
+Si tu modifies un fichier .html à la racine sans passer par Sources/, la prochaine
+regénération écrasera ta modification.
+
+Les couleurs, typographies et rayons sont en tête de assets/css/site.css (:root).
+
+Règles éditoriales tenues sur ce site
+-------------------------------------
+- En façade : « Strates Digitales » + libellés plats (le média, les Labs, les ateliers,
+  les formations, le podcast, l'accompagnement). Pas de Strate 0, de codes 0x01, de
+  Stratagème ni de Stratège : c'est la taxonomie interne Notion.
+- Un seul appel à l'action principal par page : « Réserver un échange » (Calendly).
+  Le média et les Labs renvoient vers « Travailler avec moi ».
+- Labs : un produit en vente porte son lien d'achat. Un produit en construction porte
+  un « suis la suite ». Un produit abandonné renvoie vers « Travailler avec moi ».
+- Aucun chiffre inventé. Le seul chiffre affiché est « 2 jours de gain » (Message de
+  référence, preuve 1). Tout le reste est marqué [À FOURNIR].
+- Question laissée ouverte (Plan de démarrage, 20/09) : sur une fiche produit en vente,
+  ajouter ou non un second lien discret « besoin d'un outil sur mesure → Travailler avec
+  moi ». Pour l'instant : non, un seul lien d'achat.
+
+Ce qu'il reste à fournir avant la mise en ligne
+-----------------------------------------------
+Les emplacements sont visibles sur les pages, encadrés d'orange pointillé, et tous
+marqués « [À FOURNIR : … ] ». À rechercher avec cette chaîne dans Sources/pages/.
+
+Accueil (index.html)
+- Un exemple chiffré de la perte, validé (« tu refais ça X fois par an, ça fait N heures »).
+  Sans lui, le bloc « Le calcul que personne ne fait » reste un constat.
+- (en commentaire HTML, non visible) ordre de grandeur de gain pour la preuve 2
+  (temps de cadrage avant / après) et la preuve 3 (préparation de scènes).
+
+Le média (media.html)
+- Lien Spotify du podcast (bouton « Écouter sur Spotify » et lecteur intégré : le code
+  de l'iframe est prêt en commentaire, il suffit de coller l'identifiant du podcast).
+- Titres, durées et liens des trois derniers épisodes.
+- Lien de la newsletter LinkedIn « L'Art de la Technologie ».
+
+Les Labs (labs.html)
+- Noms, description en une phrase, enseignement et liens Superhive des deux autres
+  addons en vente (en plus de Crumble Toolkit).
+- Lien direct de la vidéo de démonstration de Crumble Toolkit (pointe pour l'instant
+  vers la chaîne YouTube).
+
+Travailler avec moi (travailler-avec-moi.html)
+- Durée et prix publiables de l'atelier court (et si les versions solo et groupe
+  sont toutes deux proposées).
+- Liens des deux formations LinkedIn Learning (Blender, Midjourney).
+- Une photo réelle de Martin au travail (lumière naturelle, couleurs conservées),
+  format 4:5, environ 800 × 1000 px.
+
+Pied de page (toutes les pages, dans Sources/parts/footer.html)
+- Mention légale : numéro d'entreprise, ou formulation à retenir pour la facturation
+  via Smart.
+
+À faire aussi après la mise en ligne
+------------------------------------
+- Mettre le lien du site partout (LinkedIn, bios, signature mail).
+- Tester la page d'accueil auprès de quelqu'un d'extérieur : comprend-il en 30 secondes,
+  sans décoder un seul mot inventé ?
