@@ -1,11 +1,16 @@
 # Assemble les pages : en-tête et pied de page communs (Sources/parts) + contenu de chaque page (Sources/pages).
 # Usage : python3 Sources/build-site.py   (à lancer depuis le dossier Site_martinlisen ou n importe où)
 
-import re, pathlib, sys
+import re, pathlib, sys, hashlib
 root = pathlib.Path(__file__).resolve().parent
 out = root.parent
 head = (root/'parts/head.html').read_text()
 foot = (root/'parts/footer.html').read_text()
+# Empreinte des fichiers statiques : ajoutée en ?v= aux liens CSS/JS, pour que le navigateur
+# recharge le fichier après chaque modification au lieu de garder l'ancien en cache.
+def stamp(p): return hashlib.sha1((out/p).read_bytes()).hexdigest()[:10]
+head = head.replace('{{V:css}}', stamp('assets/css/site.css'))
+foot = foot.replace('{{V:js}}', stamp('assets/js/site.js'))
 pages = {
  'index.html': ('Strates Digitales · Martin Lisen — transforme ton usage de l\'IA en outils qui te rendent du temps',
    "Tu as intégré l'IA parce qu'elle change ta façon de travailler. Martin Lisen, consultant et formateur IA, forme les indépendants et les entreprises à en faire des outils du quotidien qui rendent vraiment du temps.", '', ''),

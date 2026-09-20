@@ -59,6 +59,12 @@ modification dans Sources/, regénérer les pages :
     python3 Sources/build-site.py
 
 Règle : corriger à la source (Sources/), jamais seulement dans le fichier généré.
+
+Après chaque modification de site.css ou site.js, relancer build-site.py : il ajoute une
+empreinte du fichier dans les liens (site.css?v=...), ce qui force les navigateurs à
+recharger la nouvelle version au lieu de garder l'ancienne en cache. Si le site en ligne
+semble ne pas refléter une mise à jour, c'est presque toujours ça : vérifier que le build a
+tourné, puis vider le cache Hostinger (hPanel → Avancé → Cache).
 Si tu modifies un fichier .html à la racine sans passer par Sources/, la prochaine
 regénération écrasera ta modification.
 
@@ -101,8 +107,9 @@ Le média (media.html)
 - Fait : lien de la newsletter LinkedIn « L'Art de la Technologie ».
 
 Le Lab (labs.html)
-- Noms, description en une phrase, enseignement et liens Superhive des deux autres
-  addons en vente (en plus de Crumble Toolkit).
+- Les fiches des deux autres addons en vente sont retirées de la page publique tant que
+  leur contenu manque (nom, une phrase, un enseignement, lien Superhive). Un commentaire
+  dans Sources/pages/labs.html indique où les remettre, sur le gabarit de Crumble Toolkit.
 - Lien direct de la vidéo de démonstration de Crumble Toolkit (pointe pour l'instant
   vers la chaîne YouTube).
 
