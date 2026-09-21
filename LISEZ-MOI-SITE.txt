@@ -109,12 +109,12 @@ Règles éditoriales tenues sur ce site
 - Chiffres : uniquement ceux communiqués par Martin. Aucun chiffre inventé, arrondi
   seulement à la baisse. Ils apparaissent à deux endroits, à garder identiques :
     · accueil, sous le premier écran (bandeau discret « hero-stats ») : 500+ professionnels
-      formés, près de 30 000 apprenants cumulés, 100+ addons Blender vendus ;
+      formés en présentiel, près de 30 000 cours suivis en e-learning (LinkedIn Learning), 100+ addons Blender vendus ;
     · accueil, section « Des outils créés. Des savoir-faire transmis. » (id #chiffres, le
       bandeau y renvoie) : les cinq chiffres complets avec leurs notes.
-  Les 29 996 apprenants LinkedIn Learning sont la somme des compteurs de sept cours : une
-  même personne peut être comptée plusieurs fois. Le mot « cumulés » et la note de bas de
-  section doivent rester. Si un chiffre change, le modifier aux deux endroits.
+  Les 29 996 sont un nombre de COURS SUIVIS (somme des compteurs de sept cours LinkedIn Learning), pas de personnes : une
+  même personne peut être comptée plusieurs fois. Ne jamais écrire « apprenants » ni « personnes » ; la
+  note de bas de section doit rester. Si un chiffre change, le modifier aux deux endroits.
 - Question laissée ouverte (Plan de démarrage, 20/09) : sur une fiche produit en vente,
   ajouter ou non un second lien discret « besoin d'un outil sur mesure → Travailler avec
   moi ». Pour l'instant : non, un seul lien d'achat.
