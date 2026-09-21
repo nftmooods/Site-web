@@ -9,7 +9,8 @@ labs.html                   Le Lab (builds, produits, expérimentations)
 travailler-avec-moi.html    Page de conversion (ateliers, formations, accompagnement)
 404.html                    Page introuvable
 .htaccess                   Renvoie les URL inconnues vers 404.html (Apache, hébergement Hostinger)
-robots.txt, sitemap.xml     Référencement
+robots.txt                  Référencement
+sitemap.xml                 GÉNÉRÉ par build-site.py (avec la date de dernière modification) : ne pas éditer à la main
 assets/css/site.css         Toute la mise en forme. Les couleurs et typographies sont celles de la charte.
 assets/js/site.js           Menu mobile, apparition au défilement, année du pied de page, dossiers de l'accueil,
                             fiches en onglets (cas d'usage, formations), repère de lecture. Le site fonctionne
@@ -21,9 +22,11 @@ assets/img/                 Les cinq illustrations « dossier » de la charte, e
                             martin-formateur.webp : photo de la page « Travailler avec moi ».
 Sources/                    Voir « Modifier le site » plus bas
 
-Les cinq familles Google Fonts (Barlow, Barlow Condensed, Fragment Mono, Caveat,
-Unbounded) se chargent depuis Google. Sans connexion, les polices de remplacement
-s'affichent.
+assets/fonts/              Les cinq familles de la charte (Barlow, Barlow Condensed, Fragment Mono, Caveat,
+                            Unbounded) sont HÉBERGÉES ICI (woff2, sous-ensemble latin, ~180 Ko au total) :
+                            aucune requête vers Google. Déclarées en tête de assets/css/site.css. Si un nouveau
+                            poids ou une nouvelle famille est nécessaire, télécharger le woff2 et ajouter
+                            un @font-face à cet endroit.
 
 Mettre en ligne sur Hostinger
 -----------------------------
@@ -85,10 +88,26 @@ Umami tourne sur le VPS (Coolify). Pour l'activer sur ce site :
 Le script est chargé en « defer » et limité au domaine martinlisen.com (les aperçus locaux
 ne comptent pas). Umami ne pose aucun cookie : la mention du pied de page passe alors à
 « Aucun cookie posé par ce site · statistiques anonymes, auto-hébergées ». Formulation volontaire :
-le lecteur Spotify (page média) et les polices Google sont des services tiers qui peuvent
-poser des cookies ou recevoir l'IP du visiteur. Ne jamais écrire « site sans cookie ».
+le lecteur Spotify (page média) est un service tiers qui peut poser des cookies ou
+recevoir l'IP du visiteur. Ne jamais écrire « site sans cookie ». (Les polices sont maintenant hébergées ici ;
+il ne reste que le lecteur Spotify.)
 Tant que les deux valeurs sont vides, rien
 n'est ajouté aux pages.
+
+Référencement (SEO)
+-------------------
+- Titres et descriptions : en tête de Sources/build-site.py (dictionnaire « pages »). Titre ≤ 60
+  caractères, avec le mot-clé (« formateur IA », « Belgique » / « Wallonie ») puis la marque.
+- Données structurées (schema.org) : dans le même fichier, section « Données structurées ».
+  Activité (ProfessionalService), atelier + prix, les quatre formations (Course, avec référence
+  Forem), Crumble Toolkit, podcast. Elles DOUBLENT le contenu visible : si un prix, une durée ou
+  une formation change sur la page, le modifier aussi là. Ne jamais y mettre une info absente de la page.
+- Sitemap : régénéré à chaque build (date = dernier commit du fichier source).
+- .htaccess : redirige www.martinlisen.com vers martinlisen.com (301) et /labs vers /labs.html.
+- À faire une fois : Google Search Console (gratuit) → ajouter martinlisen.com, soumettre
+  https://martinlisen.com/sitemap.xml, puis suivre les requêtes et les pages indexées.
+  Bing Webmaster Tools de même. Vérifier aussi que LinkedIn, Superhive, YouTube et
+  ROD Formation pointent vers le site (liens entrants).
 
 Règles éditoriales tenues sur ce site
 -------------------------------------

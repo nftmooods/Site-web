@@ -1,4 +1,11 @@
 ErrorDocument 404 /404.html
+# Une seule adresse par page : www -> sans www (HTTPS), et /labs -> /labs.html
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteCond %{HTTP_HOST} ^www\.martinlisen\.com$ [NC]
+  RewriteRule ^(.*)$ https://martinlisen.com/$1 [R=301,L]
+  RewriteRule ^(media|labs|travailler-avec-moi)/?$ /$1.html [R=301,L]
+</IfModule>
 <IfModule mod_headers.c>
   Header set X-Content-Type-Options "nosniff"
   # Les pages HTML sont toujours revalidées : une mise à jour est visible au prochain chargement.
@@ -7,6 +14,9 @@ ErrorDocument 404 /404.html
   </FilesMatch>
   # CSS et JS portent une empreinte dans leur URL (?v=...) : ils peuvent être gardés longtemps.
   <FilesMatch "\.(css|js)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+  <FilesMatch "\.woff2$">
     Header set Cache-Control "public, max-age=31536000, immutable"
   </FilesMatch>
   <FilesMatch "\.(webp|png|svg)$">

@@ -213,7 +213,6 @@
     }
     var labParam = /[?&]statut=([\w-]+)/.exec(location.search);
     if (labParam && labButtons[labParam[1]]) labCurrent = labParam[1];
-    labFilter.hidden = false;
     labRender();
     labFromHash();
     window.addEventListener('hashchange', labFromHash);
