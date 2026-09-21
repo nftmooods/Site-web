@@ -11,10 +11,14 @@ travailler-avec-moi.html    Page de conversion (ateliers, formations, accompagne
 .htaccess                   Renvoie les URL inconnues vers 404.html (Apache, hébergement Hostinger)
 robots.txt, sitemap.xml     Référencement
 assets/css/site.css         Toute la mise en forme. Les couleurs et typographies sont celles de la charte.
-assets/js/site.js           Menu mobile, apparition au défilement, année du pied de page. Le site fonctionne sans.
+assets/js/site.js           Menu mobile, apparition au défilement, année du pied de page, dossiers de l'accueil,
+                            fiches en onglets (cas d'usage, formations), repère de lecture. Le site fonctionne
+                            sans JavaScript : les fiches s'affichent alors toutes, l'une sous l'autre.
 assets/logos/               Symbole Strates Digitales (SVG) et favicon
 assets/img/                 Les cinq illustrations « dossier » de la charte, en WebP (35 à 60 Ko chacune),
-                            et og-strates-digitales.png (image de partage 1200 × 630 pour LinkedIn, X, etc.)
+                            et og-strates-digitales.png (image de partage 1200 × 630 pour LinkedIn, X, etc.).
+                            crumble-toolkit.png : aperçu du produit du Lab, hébergé ici (pas de lien externe).
+                            martin-formateur.webp : photo de la page « Travailler avec moi ».
 Sources/                    Voir « Modifier le site » plus bas
 
 Les cinq familles Google Fonts (Barlow, Barlow Condensed, Fragment Mono, Caveat,
@@ -85,57 +89,49 @@ n'est ajouté aux pages.
 
 Règles éditoriales tenues sur ce site
 -------------------------------------
-- Le texte est tourné vers le lecteur (tutoiement, « tu », sa situation, son problème),
-  pas vers Martin. Accroches et pitchs parlent de ce que le lecteur vit et récupère ;
-  le « je » reste réservé aux preuves vécues et à la bio (section « Qui est derrière »).
-  Modèle d'accroche : un constat sur ce que tu fais, puis la contradiction en question
-  (« Tu utilises l'IA pour gagner du temps. Alors pourquoi tu repars de zéro à chaque fois ? »).
+- Le texte est tourné vers le lecteur (tutoiement partout, y compris pour les équipes :
+  « ton équipe », pas « votre équipe »), sa situation, son problème. Accroches et pitchs
+  parlent de ce que le lecteur vit et récupère ; le « je » reste réservé aux preuves vécues
+  et à la bio (section « Qui est derrière »).
+  Fil de l'accueil : tes essais IA d'aujourd'hui → des méthodes et outils utiles au quotidien
+  (explorer, construire, utiliser).
 - En façade : « Strates Digitales » + libellés plats (le média, le Lab, les ateliers,
   les formations, le podcast, l'accompagnement). Pas de Strate 0, de codes 0x01, de
   Stratagème ni de Stratège : c'est la taxonomie interne Notion.
-- Un seul appel à l'action principal par page : « Réserver un échange » (Calendly).
-  Le média et le Lab renvoient vers « Travailler avec moi ».
-- Le Lab : un produit en vente porte son lien d'achat. Un produit en construction porte
-  un « suis la suite ». Un produit abandonné renvoie vers « Travailler avec moi ».
-- Aucun chiffre inventé. Le seul chiffre affiché est « 2 jours de gain » (Message de
-  référence, preuve 1). Tout le reste est marqué [À FOURNIR].
+- Un seul appel à l'action de contact, toujours le même libellé : « On en parle ? »
+  (Calendly), dans le menu du haut et dans le bloc final de chaque page. Ne pas multiplier
+  les variantes (« Parlons de… », « Réserver… »). Le média et le Lab renvoient vers
+  « Travailler avec moi ».
+- Le Lab : un outil en vente porte son lien d'achat (Crumble Toolkit → Superhive). Un outil
+  en usage ou une piste renvoie vers « Travailler avec moi ».
+- Les fiches de l'accueil et des formations disent honnêtement où en est chaque chose :
+  « existe déjà » (outil, formation) ou « à construire ensemble ». À respecter à chaque ajout.
+- Chiffres : uniquement ceux communiqués par Martin. Aucun chiffre inventé, arrondi
+  seulement à la baisse. Ils apparaissent à deux endroits, à garder identiques :
+    · accueil, sous le premier écran (bandeau discret « hero-stats ») : 500+ professionnels
+      formés, près de 30 000 apprenants cumulés, 100+ addons Blender vendus ;
+    · accueil, section « Des outils créés. Des savoir-faire transmis. » (id #chiffres, le
+      bandeau y renvoie) : les cinq chiffres complets avec leurs notes.
+  Les 29 996 apprenants LinkedIn Learning sont la somme des compteurs de sept cours : une
+  même personne peut être comptée plusieurs fois. Le mot « cumulés » et la note de bas de
+  section doivent rester. Si un chiffre change, le modifier aux deux endroits.
 - Question laissée ouverte (Plan de démarrage, 20/09) : sur une fiche produit en vente,
   ajouter ou non un second lien discret « besoin d'un outil sur mesure → Travailler avec
   moi ». Pour l'instant : non, un seul lien d'achat.
 
-Ce qu'il reste à fournir avant la mise en ligne
------------------------------------------------
-Les emplacements sont visibles sur les pages, encadrés d'orange pointillé, et tous
-marqués « [À FOURNIR : … ] ». À rechercher avec cette chaîne dans Sources/pages/.
+Ce qu'il reste à faire
+----------------------
+Il n'y a plus de « [À FOURNIR] » visible sur les pages. Restent :
+- Le Lab : les deux autres addons Blender en vente sur Superhive n'ont pas de fiche (nom,
+  une phrase, un enseignement, lien d'achat). À ajouter sur le gabarit de Crumble Toolkit
+  dans Sources/pages/labs.html.
+- Le Lab : lien direct de la vidéo de démonstration de Crumble Toolkit, si tu veux la
+  proposer en plus du lien d'achat.
+- Une preuve plus concrète (témoignage ou cas client) reste à recueillir si tu en veux une :
+  aujourd'hui, l'accueil s'appuie sur les chiffres et sur les fiches d'usage.
 
-Accueil (index.html)
-- Un exemple chiffré de la perte, validé (« tu refais ça X fois par an, ça fait N heures »).
-  Sans lui, le bloc « Le calcul que personne ne fait » reste un constat.
-- (en commentaire HTML, non visible) ordre de grandeur de gain pour la preuve 2
-  (temps de cadrage avant / après) et la preuve 3 (préparation de scènes).
-
-Le média (media.html)
-- Fait : lien Spotify du podcast et lecteur intégré (le widget Spotify affiche
-  automatiquement les derniers épisodes, rien à tenir à jour à la main).
-- Fait : lien de la newsletter LinkedIn « L'Art de la Technologie ».
-
-Le Lab (labs.html)
-- Les fiches des deux autres addons en vente sont retirées de la page publique tant que
-  leur contenu manque (nom, une phrase, un enseignement, lien Superhive). Un commentaire
-  dans Sources/pages/labs.html indique où les remettre, sur le gabarit de Crumble Toolkit.
-- Lien direct de la vidéo de démonstration de Crumble Toolkit (pointe pour l'instant
-  vers la chaîne YouTube).
-
-Travailler avec moi (travailler-avec-moi.html)
-- Fait : atelier court en 1:1, 179 € HTVA (le prix affiché est celui d'une méthode
-  rejouable, pas d'une durée : le chrono n'apparaît qu'en petite précision).
-  Un besoin d'équipe renvoie vers les formations, pas vers une version groupe de
-  l'atelier — décision du 20/09.
-- Fait : liens vers le profil formateur LinkedIn Learning.
-- Fait : photo réelle de Martin en formation (assets/img/martin-formateur.webp).
-
-À faire aussi après la mise en ligne
-------------------------------------
+À faire aussi après chaque mise en ligne
+----------------------------------------
 - Mettre le lien du site partout (LinkedIn, bios, signature mail).
 - Tester la page d'accueil auprès de quelqu'un d'extérieur : comprend-il en 30 secondes,
   sans décoder un seul mot inventé ?
