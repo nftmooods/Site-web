@@ -17,7 +17,7 @@ assets/js/site.js           Menu mobile, apparition au défilement, année du pi
 assets/logos/               Symbole Strates Digitales (SVG) et favicon
 assets/img/                 Les cinq illustrations « dossier » de la charte, en WebP (35 à 60 Ko chacune),
                             et og-strates-digitales.png (image de partage 1200 × 630 pour LinkedIn, X, etc.).
-                            crumble-toolkit.png : aperçu du produit du Lab, hébergé ici (pas de lien externe).
+                            crumble-toolkit.webp : aperçu du produit du Lab, hébergé ici (pas de lien externe).
                             martin-formateur.webp : photo de la page « Travailler avec moi ».
 Sources/                    Voir « Modifier le site » plus bas
 
@@ -84,7 +84,10 @@ Umami tourne sur le VPS (Coolify). Pour l'activer sur ce site :
 3. Relancer python3 Sources/build-site.py, commiter, pousser sur main.
 Le script est chargé en « defer » et limité au domaine martinlisen.com (les aperçus locaux
 ne comptent pas). Umami ne pose aucun cookie : la mention du pied de page passe alors à
-« statistiques anonymes, auto-hébergées ». Tant que les deux valeurs sont vides, rien
+« Aucun cookie posé par ce site · statistiques anonymes, auto-hébergées ». Formulation volontaire :
+le lecteur Spotify (page média) et les polices Google sont des services tiers qui peuvent
+poser des cookies ou recevoir l'IP du visiteur. Ne jamais écrire « site sans cookie ».
+Tant que les deux valeurs sont vides, rien
 n'est ajouté aux pages.
 
 Règles éditoriales tenues sur ce site
@@ -102,8 +105,28 @@ Règles éditoriales tenues sur ce site
   (Calendly), dans le menu du haut et dans le bloc final de chaque page. Ne pas multiplier
   les variantes (« Parlons de… », « Réserver… »). Le média et le Lab renvoient vers
   « Travailler avec moi ».
-- Le Lab : un outil en vente porte son lien d'achat (Crumble Toolkit → Superhive). Un outil
-  en usage ou une piste renvoie vers « Travailler avec moi ».
+- Le Lab : quatre statuts, nommés d'après ce que le visiteur peut faire ensuite.
+    · En vente (data-status="vente")           : lien d'achat (Superhive).
+    · Membre Lab (data-status="membre")        : l'outil existe mais son accès est RÉSERVÉ à la
+      future communauté. On le montre (schéma, vidéo, YouTube, podcast), on ne le met jamais
+      en accès libre. Bouton provisoire : « Être prévenu de l'ouverture » (newsletter LinkedIn),
+      à remplacer par un formulaire de liste d'attente quand la base e-mail existera.
+      Ne pas écrire « Rejoindre » tant que la communauté n'est pas ouverte.
+    · En construction (data-status="construction") : « suis la suite ».
+    · Sur-mesure (data-status="sur-mesure")    : base que Martin adapte à l'activité du visiteur ;
+      renvoie vers « Travailler avec moi ».
+- Le Lab : filtre par statut + carrousel horizontal (assets/js/site.js, bloc « Le Lab : filtre par
+  statut + carrousel »). Le filtre et les fiches tiennent dans un même écran : les fiches défilent
+  latéralement (flèches, balayage tactile, clavier), sans liste verticale. Vue par défaut
+  « À la une » = la PREMIÈRE fiche de chaque statut ; les autres filtres listent tout le statut.
+  L'URL garde le filtre (labs.html?statut=membre) : utile pour un lien dans un post ou un épisode.
+  Sans JavaScript, toutes les fiches s'affichent en grille. Ajouter un projet : copier une fiche
+  dans Sources/pages/labs.html, la placer EN PREMIER de la liste (le plus récent d'abord), choisir
+  son data-status, relancer le build. Un filtre par thème sera à ajouter au-delà d'une dizaine
+  de projets. Les fiches sont compactes exprès : garder le texte court.
+- Les boutons des fiches du Lab portent des événements Umami (data-umami-event="lab-cta",
+  avec statut et projet) : on peut voir quels projets donnent envie, donc quoi construire ou
+  ouvrir en premier.
 - Les fiches de l'accueil et des formations disent honnêtement où en est chaque chose :
   « existe déjà » (outil, formation) ou « à construire ensemble ». À respecter à chaque ajout.
 - Chiffres : uniquement ceux communiqués par Martin. Aucun chiffre inventé, arrondi
@@ -123,7 +146,7 @@ Ce qu'il reste à faire
 ----------------------
 Il n'y a plus de « [À FOURNIR] » visible sur les pages. Restent :
 - Le Lab : les deux autres addons Blender en vente sur Superhive n'ont pas de fiche (nom,
-  une phrase, un enseignement, lien d'achat). À ajouter sur le gabarit de Crumble Toolkit
+  le besoin, la solution, lien d'achat). À ajouter sur le gabarit de Crumble Toolkit
   dans Sources/pages/labs.html.
 - Le Lab : lien direct de la vidéo de démonstration de Crumble Toolkit, si tu veux la
   proposer en plus du lien d'achat.

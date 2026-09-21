@@ -93,6 +93,132 @@
     book.classList.add('is-enhanced');
   });
 
+  // Aide Chèque-Formation : informative et temporaire.
+  var fundingTips = Array.prototype.slice.call(document.querySelectorAll('.funding-tip'));
+  function clearFundingTimer(tip) {
+    if (tip._closeTimer) { clearTimeout(tip._closeTimer); tip._closeTimer = null; }
+  }
+  function scheduleFundingClose(tip) {
+    clearFundingTimer(tip);
+    if (tip.open) tip._closeTimer = setTimeout(function () { tip.open = false; }, 6500);
+  }
+  fundingTips.forEach(function (tip) {
+    tip.addEventListener('toggle', function () {
+      if (tip.open) fundingTips.forEach(function (other) { if (other !== tip) other.open = false; });
+      scheduleFundingClose(tip);
+    });
+  });
+
+  // Le Lab : filtre par statut + carrousel horizontal. Sans JavaScript, toutes les fiches restent visibles.
+  var labFilter = document.querySelector('[data-labfilter]');
+  var labStage = document.querySelector('[data-labstage]');
+  var labGrid = labStage ? labStage.querySelector('.lab-gallery') : null;
+  if (labFilter && labGrid) {
+    var labCards = Array.prototype.slice.call(labGrid.querySelectorAll('.project[data-status]'));
+    var labRow = labFilter.querySelector('.filter-row');
+    var labHelp = labFilter.querySelector('.filter-help');
+    var labCount = labFilter.querySelector('[data-labcount]');
+    var labPrev = labStage.querySelector('.lab-prev');
+    var labNext = labStage.querySelector('.lab-next');
+    var labKeys = ['une', 'tous', 'vente', 'membre', 'construction', 'sur-mesure'];
+    var labNames = { 'une': 'À la une', 'tous': 'Tout', 'vente': 'En vente', 'membre': 'Membre Lab', 'construction': 'En construction', 'sur-mesure': 'Sur-mesure' };
+    var labHelps = {
+      'une': 'Le projet le plus récent de chaque catégorie.',
+      'tous': 'Tous les projets, du plus récent au plus ancien.',
+      'vente': 'Disponibles maintenant : tu peux les acheter.',
+      'membre': 'Des outils que j’utilise et que je montre. L’accès est réservé aux membres du Lab.',
+      'construction': 'Des projets en cours : suis l’avancement.',
+      'sur-mesure': 'Des bases que je peux adapter à ton activité.'
+    };
+    var labCurrent = 'une';
+    var labButtons = {};
+    labStage.classList.add('is-carousel');
+    labGrid.setAttribute('role', 'region');
+    labGrid.setAttribute('aria-label', 'Projets du Lab, à faire défiler horizontalement');
+    labGrid.tabIndex = 0;
+    function labMatching(key) {
+      if (key === 'tous') return labCards.slice();
+      if (key === 'une') {
+        var seen = {};
+        return labCards.filter(function (c) {
+          var st = c.getAttribute('data-status');
+          if (seen[st]) return false;
+          seen[st] = true;
+          return true;
+        });
+      }
+      return labCards.filter(function (c) { return c.getAttribute('data-status') === key; });
+    }
+    function labArrows() {
+      var overflow = labGrid.scrollWidth > labGrid.clientWidth + 2;
+      labPrev.hidden = labNext.hidden = !overflow;
+      labPrev.disabled = labGrid.scrollLeft <= 4;
+      labNext.disabled = labGrid.scrollLeft + labGrid.clientWidth >= labGrid.scrollWidth - 2;
+    }
+    function labRender() {
+      var list = labMatching(labCurrent);
+      labCards.forEach(function (c) { c.hidden = list.indexOf(c) < 0; });
+      Object.keys(labButtons).forEach(function (k) {
+        labButtons[k].setAttribute('aria-pressed', String(k === labCurrent));
+      });
+      labHelp.textContent = labHelps[labCurrent];
+      labCount.textContent = list.length + (list.length > 1 ? ' projets affichés' : ' projet affiché');
+      labGrid.scrollLeft = 0;
+      labArrows();
+    }
+    function labSet(key) {
+      labCurrent = key;
+      labRender();
+      if (window.history && history.replaceState) {
+        history.replaceState(null, '', location.pathname + (key === 'une' ? '' : '?statut=' + key));
+      }
+    }
+    labKeys.forEach(function (key) {
+      var total = labMatching(key).length;
+      if (key !== 'une' && key !== 'tous' && !total) return;
+      if (key === 'tous' && labCards.length <= 1) return;
+      var b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'filter-chip';
+      b.setAttribute('aria-describedby', 'lab-filter-help');
+      b.appendChild(document.createTextNode(labNames[key]));
+      if (key !== 'une') {
+        var sp = document.createElement('span');
+        sp.textContent = String(total);
+        b.appendChild(sp);
+      }
+      b.addEventListener('click', function () { labSet(key); });
+      labButtons[key] = b;
+      labRow.appendChild(b);
+    });
+    function labScroll(dir) {
+      labGrid.scrollBy({ left: dir * labGrid.clientWidth * 0.95, behavior: reduce.matches ? 'auto' : 'smooth' });
+    }
+    labPrev.addEventListener('click', function () { labScroll(-1); });
+    labNext.addEventListener('click', function () { labScroll(1); });
+    var labTick = false;
+    labGrid.addEventListener('scroll', function () {
+      if (!labTick) { labTick = true; requestAnimationFrame(function () { labTick = false; labArrows(); }); }
+    }, { passive: true });
+    window.addEventListener('resize', labArrows);
+    function labFromHash() {
+      var id = location.hash.slice(1);
+      var target = null;
+      labCards.forEach(function (c) { if (c.id === id) target = c; });
+      if (!target) return;
+      if (target.hidden) { labCurrent = 'tous'; labRender(); }
+      labGrid.scrollLeft = target.offsetLeft - labGrid.offsetLeft;
+      labArrows();
+      labFilter.scrollIntoView();
+    }
+    var labParam = /[?&]statut=([\w-]+)/.exec(location.search);
+    if (labParam && labButtons[labParam[1]]) labCurrent = labParam[1];
+    labFilter.hidden = false;
+    labRender();
+    labFromHash();
+    window.addEventListener('hashchange', labFromHash);
+  }
+
   // Repère de lecture, sans déplacer le focus ni modifier l'historique.
   var chapters = document.querySelectorAll('.chapter-nav a');
   if (chapters.length) {
@@ -100,6 +226,7 @@
       return document.querySelector(a.getAttribute('href'));
     });
     var chapterPending = false;
+    var previousChapter = -1;
     function updateChapter() {
       chapterPending = false;
       var marker = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--top-h')) + 100;
@@ -111,6 +238,15 @@
         if (i === active) a.setAttribute('aria-current', 'location');
         else a.removeAttribute('aria-current');
       });
+      if (active >= 0 && active !== previousChapter && window.innerWidth <= 600) {
+        var activeChapter = chapters[active];
+        var chapterRail = activeChapter.parentElement;
+        chapterRail.scrollTo({
+          left: activeChapter.offsetLeft - (chapterRail.clientWidth - activeChapter.offsetWidth) / 2,
+          behavior: reduce.matches ? 'auto' : 'smooth'
+        });
+      }
+      previousChapter = active;
     }
     function queueChapter() {
       if (!chapterPending) { chapterPending = true; requestAnimationFrame(updateChapter); }

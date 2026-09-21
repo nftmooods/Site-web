@@ -25,7 +25,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;600&family=Barlow+Condensed:wght@400;800&family=Unbounded:wght@900&family=Fragment+Mono&family=Caveat:wght@500&display=swap">
-<link rel="stylesheet" href="assets/css/site.css?v=b7559e0beb">
+<link rel="stylesheet" href="assets/css/site.css?v=fed3aa4d46">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[
  {"@type":"Person","@id":"https://martinlisen.com/#martin","name":"Martin Lisen","url":"https://martinlisen.com/","jobTitle":"Consultant et formateur IA","email":"mailto:info@martinlisen.com","address":{"@type":"PostalAddress","addressCountry":"BE"},"sameAs":["https://www.linkedin.com/in/martinlisen/","https://www.youtube.com/@nftmooods","https://superhivemarket.com/creators/martinlisen","https://x.com/nftmooods","https://martinlisenformations.com"]},
@@ -82,25 +82,37 @@
   </div>
   <div class="band">
     <div class="wrap">
+      <span>En vente · <b>tu peux l’acheter</b></span>
+      <span>Membre Lab · <b>accès réservé</b></span>
       <span>En construction · <b>on montre le chemin</b></span>
-      <span>En vente · <b>on met le lien</b></span>
-      <span>Abandonné · <b>on dit pourquoi</b></span>
     </div>
   </div>
 </section>
 
-<!-- ===== BUILDS ===== -->
+<!-- ===== BUILDS =====
+  Ajouter un projet : copier une fiche ci-dessous et la placer EN PREMIER de la liste (le plus récent d'abord),
+  puis choisir data-status : vente | membre | construction | sur-mesure.
+  « À la une » affiche automatiquement la première fiche de chaque statut. -->
 <section class="strate" id="builds" aria-labelledby="h-builds">
   <div class="wrap">
     <span class="wm" aria-hidden="true">01</span>
     <div class="strate-head" data-reveal><span class="strate-num">01</span><span class="strate-rule"></span><span class="mono">Projets et produits</span></div>
-    <h2 id="h-builds" data-reveal>Des outils en usage.<br>Des pistes en exploration.</h2>
-    <p class="lede" data-reveal>Découvre le besoin derrière chaque projet, ce qui a été construit et ce que l’expérience a appris. Les outils utilisables viennent d’abord, les expérimentations ensuite.</p>
+    <div class="lab-head"><h2 id="h-builds" data-reveal>Ce qui existe déjà. Ce qui se construit.</h2>
+    <p class="lede" data-reveal>Découvre le besoin derrière chaque projet et ce qui a été construit. Certains outils s’achètent, d’autres sont réservés aux membres du Lab, d’autres se construisent ou s’adaptent à ton activité.</p></div>
 
-    <div class="projects lab-gallery"><article class="project live" id="crumble"><div class="ph"><span>Addon Blender</span><span class="chip ">En vente</span></div><figure class="project-preview product-preview"><img src="assets/img/crumble-toolkit.png" alt="Présentation de Crumble Toolkit publiée sur Superhive" loading="lazy" width="800" height="450"><figcaption>Visuel du produit · Superhive</figcaption></figure><div class="pb"><h3>Crumble Toolkit</h3><div class="project-fact"><span class="mono">Le besoin</span><p>Créer de l’usure et des dégâts sur des objets 3D tout en gardant les réglages modifiables.</p></div><div class="project-fact"><span class="mono">La solution</span><p>Quatre fonctions dans Blender : Damage, Relief, Debris et Drop to Floor. Les effets s’ajustent sans figer immédiatement le résultat.</p></div><details class="practical"><summary>Ce que cet essai m’a appris</summary><p>Construire par étapes permet de reprendre un réglage sans perdre tout ce qui précède.</p></details><div class="act"><a class="cta" href="https://superhivemarket.com/products/crumble-toolkit" target="_blank" rel="noopener">Voir le produit et les démonstrations ↗</a></div></div></article>
-<article class="project " id="agent-cadrage"><div class="ph"><span>Assistant · outil interne</span><span class="chip t">En usage</span></div><div class="project-diagram"><span class="mono">Le principe</span><div class="diagram-flow"><span>Ton idée</span><b aria-hidden="true">↓</b><span>Les bonnes questions</span><b aria-hidden="true">↓</b><strong>Un cahier des charges</strong></div><span class="hand">↳ poser les bases avant de construire</span></div><div class="pb"><h3>Agent de cadrage d’applications</h3><div class="project-fact"><span class="mono">Le besoin</span><p>Transformer une idée et des échanges dispersés en projet suffisamment précis pour commencer.</p></div><div class="project-fact"><span class="mono">La solution</span><p>Un assistant organise les questions en trois temps : exploration, cadrage et consolidation.</p></div><details class="practical"><summary>Ce que cet essai m’a appris</summary><p>Un cadre réutilisable aide à structurer les projets suivants. Les réponses et les choix restent à vérifier.</p></details><div class="act"><a class="cta ghost" href="travailler-avec-moi.html#accompagnement">Un assistant pour ton équipe ? →</a></div></div></article>
-<article class="project " id="pxgrove"><div class="ph"><span>Jeu · expérimentation web</span><span class="chip t">En construction</span></div><div class="project-diagram garden-diagram"><span class="mono">Le principe</span><div class="seed-stages" aria-hidden="true"><span>▪</span><b>→</b><span>♧</span><b>→</b><span>♣</span></div><p>Un pixel → une plante → du temps</p><span class="hand">↳ une idée qui pousse</span></div><div class="pb"><h3>PxGrove</h3><div class="project-fact"><span class="mono">Le besoin</span><p>Explorer une expérience de jeu simple : planter un pixel et le voir devenir une plante au fil du temps.</p></div><div class="project-fact"><span class="mono">La solution</span><p>Un jeu web construit en public, avec des versions successives pour tester l’idée.</p></div><details class="practical"><summary>Ce que cet essai m’a appris</summary><p>Une expérimentation sert aussi à observer, corriger et décider de ce qui mérite d’être poursuivi.</p></details><div class="act"><a class="cta ghost" href="https://x.com/nftmooods" target="_blank" rel="noopener">Suivre le projet sur X ↗</a><a class="ulink" href="https://github.com/nftmooods/pxgrove" target="_blank" rel="noopener">Voir le code ↗</a></div></div></article>
-<article class="project " id="agenda-partage"><div class="ph"><span>Application · agenda partagé</span><span class="chip t">Piste à adapter</span></div><div class="project-diagram"><span class="mono">Le principe</span><div class="calendar-sketch" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div><span class="hand">↳ trouver le contexte qui lui convient</span></div><div class="pb"><h3>Agenda partagé</h3><div class="project-fact"><span class="mono">Le besoin</span><p>Organiser un planning commun en tenant compte des contraintes d’un groupe.</p></div><div class="project-fact"><span class="mono">La solution</span><p>Une base fonctionnelle d’agenda, abandonnée comme produit générique. Elle pourrait être adaptée à un secteur précis.</p></div><details class="practical"><summary>Ce que cet essai m’a appris</summary><p>Une solution technique a besoin d’un public et d’un usage précis pour trouver sa place.</p></details><div class="act"><a class="cta ghost" href="travailler-avec-moi.html#accompagnement">En parler pour ton secteur →</a></div></div></article></div>
+    <div class="lab-filter" data-labfilter hidden>
+      <div class="filter-row" role="group" aria-label="Filtrer les projets"></div>
+      <p class="filter-help" id="lab-filter-help"></p>
+      <p class="sr-only" aria-live="polite" data-labcount></p>
+    </div>
+    <div class="lab-stage" data-labstage>
+    <button type="button" class="lab-nav lab-prev" aria-label="Projets précédents" hidden><span aria-hidden="true">←</span></button>
+    <button type="button" class="lab-nav lab-next" aria-label="Projets suivants" hidden><span aria-hidden="true">→</span></button>
+    <div class="projects lab-gallery"><article class="project live" id="crumble" data-status="vente"><div class="ph"><span>Addon Blender</span><span class="chip ">En vente</span></div><figure class="project-preview product-preview"><img src="assets/img/crumble-toolkit.webp" alt="Crumble Toolkit : un puits en 3D avant (à gauche) et après (à droite) application de l’addon, avec pierres abîmées, débris et herbe" loading="lazy" width="1000" height="502"><figcaption>Visuel du produit · Superhive</figcaption></figure><div class="pb"><h3>Crumble Toolkit</h3><div class="project-fact"><span class="mono">Le besoin</span><p>Créer de l’usure et des dégâts sur des objets 3D tout en gardant les réglages modifiables.</p></div><div class="project-fact"><span class="mono">La solution</span><p>Quatre fonctions dans Blender : Damage, Relief, Debris et Drop to Floor. Les effets s’ajustent sans figer immédiatement le résultat.</p></div><div class="act"><a class="cta" href="https://superhivemarket.com/products/crumble-toolkit" target="_blank" rel="noopener" data-umami-event="lab-cta" data-umami-event-statut="vente" data-umami-event-projet="crumble">Voir le produit et les démonstrations ↗</a></div></div></article>
+<article class="project " id="agent-cadrage" data-status="membre"><div class="ph"><span>Assistant · outil interne</span><span class="chip t">Membre Lab</span></div><div class="project-diagram"><span class="mono">Le principe</span><div class="diagram-flow"><span>Ton idée</span><b aria-hidden="true">↓</b><span>Les bonnes questions</span><b aria-hidden="true">↓</b><strong>Un cahier des charges</strong></div><span class="hand">↳ poser les bases avant de construire</span></div><div class="pb"><h3>Agent de cadrage d’applications</h3><div class="project-fact"><span class="mono">Le besoin</span><p>Transformer une idée et des échanges dispersés en projet suffisamment précis pour commencer.</p></div><div class="project-fact"><span class="mono">La solution</span><p>Un assistant organise les questions en trois temps : exploration, cadrage et consolidation.</p></div><p class="member-note">Réservé aux membres du Lab · ouverture à venir</p><div class="act"><a class="cta ghost" href="https://www.linkedin.com/newsletters/strates-digitales-7052007699328229376/" target="_blank" rel="noopener" data-umami-event="lab-cta" data-umami-event-statut="membre" data-umami-event-projet="agent-cadrage">Être prévenu de l’ouverture ↗</a></div></div></article>
+<article class="project " id="pxgrove" data-status="construction"><div class="ph"><span>Jeu · expérimentation web</span><span class="chip g">En construction</span></div><div class="project-diagram garden-diagram"><span class="mono">Le principe</span><div class="seed-stages" aria-hidden="true"><span>▪</span><b>→</b><span>♧</span><b>→</b><span>♣</span></div><p>Un pixel → une plante → du temps</p><span class="hand">↳ une idée qui pousse</span></div><div class="pb"><h3>PxGrove</h3><div class="project-fact"><span class="mono">Le besoin</span><p>Explorer une expérience de jeu simple : planter un pixel et le voir devenir une plante au fil du temps.</p></div><div class="project-fact"><span class="mono">La solution</span><p>Un jeu web construit en public, avec des versions successives pour tester l’idée.</p></div><div class="act"><a class="cta ghost" href="https://x.com/nftmooods" target="_blank" rel="noopener" data-umami-event="lab-cta" data-umami-event-statut="construction" data-umami-event-projet="pxgrove">Suivre le projet sur X ↗</a><a class="ulink" href="https://github.com/nftmooods/pxgrove" target="_blank" rel="noopener">Voir le code ↗</a></div></div></article>
+<article class="project " id="agenda-partage" data-status="sur-mesure"><div class="ph"><span>Application · agenda partagé</span><span class="chip">Sur-mesure</span></div><div class="project-diagram"><span class="mono">Le principe</span><div class="calendar-sketch" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div><span class="hand">↳ trouver le contexte qui lui convient</span></div><div class="pb"><h3>Agenda partagé</h3><div class="project-fact"><span class="mono">Le besoin</span><p>Organiser un planning commun en tenant compte des contraintes d’un groupe.</p></div><div class="project-fact"><span class="mono">La solution</span><p>Une base fonctionnelle d’agenda, abandonnée comme produit générique. Elle peut être adaptée sur mesure à ton secteur.</p></div><div class="act"><a class="cta ghost" href="travailler-avec-moi.html#accompagnement" data-umami-event="lab-cta" data-umami-event-statut="sur-mesure" data-umami-event-projet="agenda-partage">Le faire adapter à ton secteur →</a></div></div></article></div>
+    </div>
   </div>
 </section>
 
@@ -113,7 +125,7 @@
       <div class="sticky" data-reveal>
         <h2 id="h-demarche">Repérer, tester, trancher.</h2>
         <div class="hair"></div>
-        <p class="lede">Ces projets nourrissent mon travail de formateur et de consultant. Tu peux utiliser un outil existant, suivre une expérimentation ou partir d’un besoin similaire pour construire ta propre solution.</p>
+        <p class="lede">Ces projets nourrissent mon travail de formateur et de consultant. Tu peux acheter un outil, suivre une expérimentation ou partir d’un besoin similaire. Les outils que j’utilise au quotidien sont réservés aux membres du Lab.</p>
       </div>
       <div data-reveal>
         <div class="fsteps four" style="margin-top:0">
@@ -129,17 +141,16 @@
 </section>
 
 <!-- ===== CTA ===== -->
-<section class="strate final" id="contact" aria-labelledby="h-contact">
+<section class="strate final final-ticket" id="contact" aria-labelledby="h-contact">
   <div class="wrap">
     <div class="box" data-reveal>
-      <div>
-        <span class="mono" style="color:var(--turq-deep)">Sur mesure</span>
-        <h2 id="h-contact" style="margin-top:14px">Un outil ou un addon pour ton équipe, construit sur ce que tu fais déjà.</h2>
+      <div class="ticket-message">
+        <div class="ticket-tags"><span class="chip">Sur mesure</span><span class="chip outline">Partir du réel</span></div>
+        <h2 id="h-contact">Un outil construit sur ce que tu fais déjà.</h2>
         <p>Souvent à partir d'une base déjà construite ici. Jamais en spéculant sur ce qui pourrait servir un jour.</p>
+        <span class="hand">↳ on choisit le point de départ ensemble</span>
       </div>
-      <div class="actions">
-        <a class="cta" href="https://meet.martinlisen.com/info-martinlisen.com" target="_blank" rel="noopener">On en parle ? <span aria-hidden="true">↗</span></a>
-      </div>
+      <div class="contact-ticket"><div class="contact-ticket-head"><span class="mono">Pour commencer</span><i aria-hidden="true"></i></div><ul><li>Un besoin proche d’un projet du Lab</li><li>Une tâche propre à ton activité</li><li>Un outil à adapter à ton équipe</li></ul><div class="actions"><a class="cta light" href="https://meet.martinlisen.com/info-martinlisen.com" target="_blank" rel="noopener">On en parle ? <span aria-hidden="true">↗</span></a><a class="ticket-mail" href="mailto:info@martinlisen.com">info@martinlisen.com</a></div></div>
     </div>
   </div>
 </section>
@@ -185,10 +196,10 @@
     </div>
     <div class="foot-bar">
       <span>© <span id="year">2026</span> Martin Lisen · Strates Digitales</span>
-      <span>Site sans cookie · statistiques anonymes, auto-hébergées</span>
+      <span>Aucun cookie posé par ce site · statistiques anonymes, auto-hébergées</span>
     </div>
   </div>
 </footer>
-<script src="assets/js/site.js?v=d9859c09e9"></script>
+<script src="assets/js/site.js?v=131002dc02"></script>
 </body>
 </html>

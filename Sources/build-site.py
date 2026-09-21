@@ -19,9 +19,9 @@ head = head.replace('{{V:css}}', stamp('assets/css/site.css'))
 if UMAMI_SCRIPT and UMAMI_WEBSITE_ID:
     analytics = ('\n<script defer src="%s" data-website-id="%s" data-domains="martinlisen.com"></script>'
                  % (UMAMI_SCRIPT, UMAMI_WEBSITE_ID))
-    privacy = 'Site sans cookie · statistiques anonymes, auto-hébergées'
+    privacy = 'Aucun cookie posé par ce site · statistiques anonymes, auto-hébergées'
 else:
-    analytics, privacy = '', 'Site sans cookie ni traceur'
+    analytics, privacy = '', 'Aucun cookie posé par ce site'
 head = head.replace('{{ANALYTICS}}', analytics)
 foot = foot.replace('{{PRIVACY}}', privacy)
 foot = foot.replace('{{V:js}}', stamp('assets/js/site.js'))
