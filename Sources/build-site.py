@@ -6,7 +6,7 @@ import re, pathlib, sys, hashlib, json, subprocess, datetime
 # ---- Statistiques de visite (Umami, auto-hébergé sur le VPS) --------------------------------
 # Renseigner les deux valeurs ci-dessous (Umami → Settings → Websites → martinlisen.com → Edit),
 # puis relancer ce script. Tant qu'elles sont vides, aucun script n'est ajouté aux pages.
-UMAMI_SCRIPT = 'https://umami.m3ods.cloud/script.js'
+UMAMI_SCRIPT = 'https://stats.martinlisen.com/kit.js'
 UMAMI_WEBSITE_ID = 'a737b9e2-00e0-42c3-a3a6-aa2417741277'
 root = pathlib.Path(__file__).resolve().parent
 out = root.parent
