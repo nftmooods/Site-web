@@ -17,7 +17,7 @@ foot = (root/'parts/footer.html').read_text(encoding='utf-8')
 def stamp(p): return hashlib.sha1((out/p).read_bytes()).hexdigest()[:10]
 head = head.replace('{{V:css}}', stamp('assets/css/site.css'))
 if UMAMI_SCRIPT and UMAMI_WEBSITE_ID:
-    analytics = ('\n<script defer src="%s" data-website-id="%s" data-domains="martinlisen.com"></script>'
+    analytics = ('\n<script defer src="%s" data-website-id="%s" data-domains="stratesdigitales.com"></script>'
                  % (UMAMI_SCRIPT, UMAMI_WEBSITE_ID))
     privacy = 'Aucun cookie posé par ce site · statistiques anonymes, auto-hébergées'
 else:
@@ -38,7 +38,7 @@ pages = {
 }
 
 # ---- Données structurées (schema.org) : à tenir à jour avec le contenu des pages -------------------
-BASE = 'https://martinlisen.com'
+BASE = 'https://stratesdigitales.com'
 PERSON = {"@type":"Person","@id":BASE+"/#martin","name":"Martin Lisen","url":BASE+"/","jobTitle":"Consultant et formateur IA",
   "email":"mailto:info@martinlisen.com","address":{"@type":"PostalAddress","addressCountry":"BE"},
   "worksFor":{"@id":BASE+"/#service"},

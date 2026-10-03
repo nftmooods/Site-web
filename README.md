@@ -1,4 +1,4 @@
-# martinlisen.com — Strates Digitales
+# stratesdigitales.com — Strates Digitales
 
 Site statique (HTML, CSS, JS) de Martin Lisen, construit sur la charte Strates Digitales.
 Aucune dépendance, aucun build : les fichiers à la racine se servent tels quels.

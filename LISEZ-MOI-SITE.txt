@@ -1,4 +1,4 @@
-MARTINLISEN.COM — SITE STRATES DIGITALES
+STRATESDIGITALES.COM — SITE STRATES DIGITALES
 Site statique (HTML, CSS, JS), sans base de données ni build obligatoire.
 
 Ce que contient le dossier

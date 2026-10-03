@@ -2,8 +2,8 @@ ErrorDocument 404 /404.html
 # Une seule adresse par page : www -> sans www (HTTPS), et /labs -> /labs.html
 <IfModule mod_rewrite.c>
   RewriteEngine On
-  RewriteCond %{HTTP_HOST} ^www\.martinlisen\.com$ [NC]
-  RewriteRule ^(.*)$ https://martinlisen.com/$1 [R=301,L]
+  RewriteCond %{HTTP_HOST} ^www\.stratesdigitales\.com$ [NC]
+  RewriteRule ^(.*)$ https://stratesdigitales.com/$1 [R=301,L]
   RewriteRule ^(media|labs|travailler-avec-moi)/?$ /$1.html [R=301,L]
 </IfModule>
 <IfModule mod_headers.c>
