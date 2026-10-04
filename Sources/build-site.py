@@ -26,7 +26,7 @@ head = head.replace('{{ANALYTICS}}', analytics)
 foot = foot.replace('{{PRIVACY}}', privacy)
 foot = foot.replace('{{V:js}}', stamp('assets/js/site.js'))
 pages = {
- 'index.html': ("Martin Lisen · Formateur et consultant IA en Belgique",
+ 'index.html': ("Strates Digitales · Martin Lisen, formateur et consultant IA en Belgique",
    "Formateur et consultant IA en Belgique : ateliers, formations et accompagnement pour transformer tes essais IA en méthodes et outils du quotidien.", '', ''),
  'media.html': ('Podcast et newsletter IA · Strates Digitales',
    "Strates Digitales, le podcast et la newsletter de Martin Lisen : les nouvelles technologies sans la hype, usages qui marchent, limites et risques.", 'media.html', 'media'),

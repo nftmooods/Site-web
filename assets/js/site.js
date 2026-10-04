@@ -378,12 +378,16 @@
       });
       if (st < 5) hxDrawers.forEach(function (dr) { qa('b', dr).forEach(function (b) { b.classList.remove('full'); }); });
     };
-    setInterval(function () {
-      if (reduced() || !hxVisible) return;
-      hxStep = hxStep >= LAST + HOLD ? 0 : hxStep + 1;
-      hx.classList.toggle('is-reset', hxStep === 0);
-      showHx(Math.min(hxStep, LAST));
-    }, 850);
+    var hxFirst = true;
+    (function tick() {
+      if (!reduced() && hxVisible) {
+        hxStep = hxStep >= LAST + HOLD ? 0 : hxStep + 1;
+        if (hxStep === 0) hxFirst = false;
+        hx.classList.toggle('is-reset', hxStep === 0);
+        showHx(Math.min(hxStep, LAST));
+      }
+      setTimeout(tick, hxFirst ? 520 : 850);   // premier cycle plus rapide, puis rythme de croisière
+    })();
     if ('IntersectionObserver' in window) {
       new IntersectionObserver(function (es) {
         es.forEach(function (e) { hxVisible = e.isIntersecting; hx.classList.toggle('is-paused', !e.isIntersecting); });
