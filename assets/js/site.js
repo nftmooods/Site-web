@@ -428,7 +428,7 @@
     sitDecl.classList.toggle('is-on', k >= n);
     pcFinale.classList.toggle('is-on', k >= n + 1);
     sitRail.forEach(function (s, i) { s.classList.toggle('is-on', i <= Math.min(k, n)); });
-    pcLabel.textContent = k >= n ? 'Le déclic' : 'Situation ' + pad(Math.max(k, 0) + 1) + ' sur ' + pad(n);
+    pcLabel.textContent = k >= n + 1 ? 'Le déclic' : k >= n ? 'Le coût' : 'Situation ' + pad(Math.max(k, 0) + 1) + ' sur ' + pad(n);
   }
 
   /* ---------- Scène 3 : grille des cas d'usage ---------- */

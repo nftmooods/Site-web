@@ -811,6 +811,8 @@ body .pc{overflow-x:clip}
 .pc-finale{display:none}
 .js-anim .pc-finale{display:grid;place-items:center;position:absolute;inset:-12px -8px;z-index:20;pointer-events:none;opacity:0;background:rgba(245,244,239,.9);transition:opacity .7s var(--ease)}
 .js-anim .pc-finale.is-on{opacity:1}
+.pc-line{display:block}
+.pc-finale.is-long p{max-width:24ch;font-size:clamp(30px,4.9vw,76px)}
 .pc-finale p{max-width:17ch;margin:0;font:800 clamp(44px,7.6vw,118px)/.94 var(--cond);letter-spacing:-.03em;text-align:center;text-wrap:balance;color:var(--turq-deep)}
 .pc-finale span{display:inline-block;opacity:0;transform:translateY(.5em) scale(1.06);transition:opacity .5s var(--ease),transform .7s var(--ease)}
 .pc-finale.is-on span{opacity:1;transform:none;transition-delay:calc(.25s + var(--w) * 90ms)}
