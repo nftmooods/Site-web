@@ -34,6 +34,8 @@ pages = {
    "Le Lab de Martin Lisen : addons Blender, assistants IA et applications construits en public. À acheter, réservés aux membres, en construction ou sur mesure.", 'labs.html', 'labs'),
  'travailler-avec-moi.html': ('Formation et accompagnement IA en Wallonie · Martin Lisen',
    "Ateliers, formations (Chèque-Formation) et accompagnement IA en Wallonie : construis des méthodes et outils adaptés à ton activité avec Martin Lisen.", 'travailler-avec-moi.html', 'travailler'),
+ 'confidentialite.html': ('Politique de confidentialité · Strates Digitales',
+   "Ce que deviennent tes données quand tu visites le site ou que tu fais le diagnostic : ce qui est collecté, pourquoi, qui y a accès, combien de temps, et tes droits.", 'confidentialite.html', ''),
  '404.html': ('Page introuvable — Strates Digitales', "Cette page n'existe pas ou a changé d'adresse.", '404.html', ''),
 }
 
@@ -102,7 +104,7 @@ def lastmod(name):
     except Exception:
         pass
     return datetime.date.fromtimestamp(src.stat().st_mtime).isoformat()
-urls = [('', 'index.html'), ('media.html','media.html'), ('labs.html','labs.html'), ('travailler-avec-moi.html','travailler-avec-moi.html')]
+urls = [('', 'index.html'), ('media.html','media.html'), ('labs.html','labs.html'), ('travailler-avec-moi.html','travailler-avec-moi.html'), ('confidentialite.html','confidentialite.html')]
 sm = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
 for path, src in urls:
     sm += '  <url><loc>%s/%s</loc><lastmod>%s</lastmod></url>\n' % (BASE, path, lastmod(src))
