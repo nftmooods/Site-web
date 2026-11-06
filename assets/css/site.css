@@ -1105,8 +1105,19 @@ body .journey{overflow-x:clip}
 .js-anim .hx.is-paused .hx-card{animation-play-state:paused}
 @media(max-width:900px){.hx{grid-template-columns:1fr;gap:24px}
 .hx-dash{grid-template-columns:1fr 1fr;grid-template-areas:"a b" "c c" "d d";transform:rotateX(6deg) rotateY(-6deg)}}
+.hx-say{display:none}
 @media(max-width:560px){.hx-dash{grid-template-columns:1fr;grid-template-areas:"a" "b" "c" "d";transform:none}
-.js-anim .hx-card{animation:none}}
+.js-anim .hx-card{animation:none}
+.hero .hx{margin-top:8px}
+.hx-right .bench-heading{flex-direction:column;align-items:flex-start;gap:6px;margin-bottom:16px}
+.hx-dash{gap:10px}
+.hx-card,.js-anim .hx-card:hover,.js-anim .hx-card:focus-visible{display:grid;grid-template-columns:1fr auto;align-items:center;gap:4px 12px;padding:14px 16px;transform:none;box-shadow:none}
+.hx-card .hx-tab{grid-column:1}
+.hx-card:after{grid-column:2;grid-row:1/span 2}
+.hx-card:after{content:'+';font:400 22px/1 var(--sans);color:var(--turq-deep)}
+.hx-card[aria-expanded="true"]:after{content:'−';color:var(--orange)}
+.hx-ui,.hx-c4{display:none}
+.hx-say{display:block;grid-column:1;font-size:16px;line-height:1.3;color:var(--ink)}}
 .ox-stage{display:grid;grid-template-columns:minmax(0,.75fr) minmax(0,1.25fr);gap:24px 56px;align-items:center;margin-top:24px}
 .ox-left h2{margin:0;font-size:clamp(40px,4.4vw,68px);line-height:.98}
 .ox-step{margin-top:26px;font-size:11px;color:var(--cyan)}
