@@ -96,6 +96,8 @@ for name,(title,desc,canon,cur) in pages.items():
 # ---- Sitemap : date de dernière modification = dernier commit du fichier source (sinon date du fichier)
 def lastmod(name):
     src = root/'pages'/name
+    if not src.exists():
+        src = out/name   # standalone page (ex. viewstack.html), not built from Sources/pages
     try:
         dirty = subprocess.run(['git','status','--porcelain','--',str(src)], cwd=out, capture_output=True, text=True, timeout=10).stdout.strip()
         if not dirty:
@@ -104,7 +106,7 @@ def lastmod(name):
     except Exception:
         pass
     return datetime.date.fromtimestamp(src.stat().st_mtime).isoformat()
-urls = [('', 'index.html'), ('media.html','media.html'), ('labs.html','labs.html'), ('travailler-avec-moi.html','travailler-avec-moi.html'), ('confidentialite.html','confidentialite.html')]
+urls = [('', 'index.html'), ('media.html','media.html'), ('labs.html','labs.html'), ('travailler-avec-moi.html','travailler-avec-moi.html'), ('confidentialite.html','confidentialite.html'), ('viewstack.html','viewstack.html')]
 sm = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
 for path, src in urls:
     sm += '  <url><loc>%s/%s</loc><lastmod>%s</lastmod></url>\n' % (BASE, path, lastmod(src))
