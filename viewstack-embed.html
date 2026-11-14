@@ -246,6 +246,14 @@ body.embed #top header { display: none; }
 #clips .in { gap: 12px; }
 .cliptabs { display: flex; flex-wrap: wrap; border-bottom: 1px solid var(--line); }
 .more { font-family: var(--mono); font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--cyan); text-decoration: none; }
+
+@media (min-width: 480px) and (max-width: 720px) {
+  body.embed .panes { grid-template-columns: 1fr auto 1fr; gap: 10px; }
+  body.embed .arrow { transform: none; font-size: 30px; }
+  body.embed .controls { grid-template-columns: 1fr; gap: 10px; }
+  body.embed .label { font-size: 11px; }
+  body.embed .caption { min-height: 0; font-size: 15px; }
+}
 </style>
 </head>
 <body class="embed">
